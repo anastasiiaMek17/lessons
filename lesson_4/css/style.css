@@ -1,0 +1,74 @@
+
+@import url("reset.css"); 
+
+
+@font-face {
+    font-family: 'Preciosa';
+    src: url('../fonts/Preciosa.woff2') format('woff2'),
+        url('../fonts/Preciosa.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+body{
+    font-family: 'Oswald', sans-serif;
+}
+
+h1{
+    font-size: 32px;
+    font-weight: 700;
+}
+
+.title p{
+    font-style: italic;
+}
+
+.content{
+    font-family: 'Montserrat', sans-serif;
+}
+
+h3{
+    font-size: 24px;
+    font-weight: 700;
+    text-align: center;
+    letter-spacing: 5px;
+}
+
+.content_lsp{
+    white-space: nowrap;
+}
+
+span{
+    color: rgb(168, 90, 0);
+    text-decoration: underline;
+}
+
+.content__list{
+    font-weight: 700;
+    word-spacing: 20px;
+
+}
+
+.list{
+    text-shadow: 3px 3px 3px rgb(30, 29, 31);
+    text-indent: 15px;
+}
+
+.species_shark{
+    font-family: 'Preciosa';
+    font-size: 18px;
+}
+
+.species_shark_title{
+    text-transform: uppercase;
+}
+
+.species_shark p{
+    font-family: 'Montserrat', sans-serif ;
+    font-size: 14px;
+    line-height: 2;
+    text-indent: 15px;
+}
+
+
