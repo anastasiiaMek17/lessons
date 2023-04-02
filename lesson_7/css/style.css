@@ -8,7 +8,7 @@ header{
     font-weight: 300;
     line-height: 1.67;
     background: url(../img/photo1.png)  #212529  center / cover no-repeat;;
-    height: 600px;
+    min-height: 600px;
     border-radius: 0px 5px 5px 0px;
 }
 
@@ -38,7 +38,7 @@ main{
 }
 
 .list{
-    max-width: 1270px;
+    max-width: 1107px;
     margin: 0 auto;
 }
 .list1 li {
@@ -50,7 +50,7 @@ main{
 
 main h2{
     display: block;
-    margin: 45px 0;
+    margin-bottom: 45px;
     font-weight: 400;
     font-size: 26px;
     line-height: 28px;
@@ -105,7 +105,7 @@ main h2{
 
 footer{
     font-family: 'Inter', sans-serif;
-    height: 560px;
+    min-height: 560px;
     background: url("..//img/speaker\ 1.png") 75% 50%  no-repeat , linear-gradient(115deg, rgba(48,86,211,0) 64%, rgba(48,86,211,0.10) 64%, rgba(48,86,211,0.10) 67%, rgba(0,0,0,0) 67%, rgba(48,86,211,0.20) 67%, rgba(0,0,0,0) 90%) #F4F7FF ;
 }
 
@@ -125,26 +125,38 @@ footer{
 }
 
 .texts__text{
+    max-width: 570px ;
+    display: inline-block;
+    margin-bottom: 35px;
     font-weight: 500;
     font-size: 16px;
     line-height: 1.5;
     color: #637381;
 }
 
+
+
 .texts{
+    max-width:1021px;
+    margin: 0 auto;
     padding-top: 145px ;
-    margin:0 0  35px 135px;
+    margin-bottom: 35px;
 }
 
-.link   {
-   margin-left: 135px; 
+.link  {
+    display: block;
    background: #3056D3;
     border-radius: 30px;
-    
     width: 139px;
     height: 44px;
 }
+
+.link:hover{
+    background-color: #09054d;
+
+}
 .link p{
+
     padding: 10px 30px ;
     font-weight: 600;
     font-size: 16px;
@@ -156,29 +168,75 @@ footer{
 section{
 padding: 100px 50px;
 }
-.one{
-    background-color: #0934ab;
-    color: #E5E5E5;
+
+.link_s{
+    display: inline-block;
+    background: #2da842;
+    border-radius: 30px;
+    width: 139px;
+    height: 44px;
 }
-.two{
-    height: 400px;
-    width: 1200px;
-    margin: 20px 0;
-    background-image: url(..//img/coffe.jpg);
-    background-repeat: no-repeat;
+
+.link_s p{
+    padding: 10px 0;
+    text-align: center;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #FFFFFF;
 }
-.three{
-    height: 400px;
-    width: 1200px;
-    background-image: url(..//img/coffe.jpg);
-    background-attachment: fixed;
+.link_s:active{
+    background-color: #0c5418;
+    box-shadow: 5px 5px 15px 0 black;
+}
+
+
+.link_g{
+    display: inline-block;
+    margin: 0 100px ;
+}
+
+.link_g:visited{
+    color: #3056D3;
+}
+
+.link_g:focus{
+    outline: #0c5418;
+}
+
+.numbers{
+    margin: 40px 0;
+}
+
+.numbers__list li:not(:last-child) {
+    margin-bottom: 15px;
+}
+
+.numbers__list li:first-child{
+    color: firebrick;
+}
+.numbers__list li:nth-child(2){
+    font-weight: 700;
+}
+
+.words:first-of-type{
+    text-align: center;
+}
+
+.smile{
     
-}  
-.four{
-    margin-top: 20px;
-    height: 400px;
-    width: 1200px;
-    background-image: url(..//img/coffe.jpg);
-    background-position: center;
-    background-size: cover;
+    background-color: #E6E6E6;
+    width: 300px;
+
+}
+
+.smile::after{
+    content: "after";
+    border-radius: 50%;
+    background-color: #0c5418;
+}
+.smile::before{
+    content: "before";
+    border-radius: 50%;
+    background-color: #b7d61d;
 }
