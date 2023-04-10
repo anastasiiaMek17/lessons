@@ -1,0 +1,81 @@
+@import url("reset.css");
+
+body {
+	font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+	padding: 20px;
+	background-color: rgb(232, 230, 228);
+}
+.icons{
+	padding-bottom: 50px;
+}
+.content{
+	max-width: 900px;
+	margin: 0 auto;
+}
+
+h2{
+	font-weight: 700;
+	font-size: 40px;
+	line-height: 1.12;
+	text-align: center;
+	text-transform: capitalize;
+	border: 2px solid #2E2E2E;
+	color: #2E2E2E;
+	padding: 10px 0;
+	margin-bottom: 20px;
+}
+
+p{
+	font-size: 16px;
+	line-height: 1.56;
+	text-align: center;
+	color: #637381;
+	margin-bottom: 20px;
+
+}
+
+
+.icons_img img {
+	width: 92px;
+	height: 92px;
+}
+
+.icons_img img:hover{
+	width: 130px;
+	height: 130px;
+}
+
+.elements__design{
+	background:  url("..//img/Oval.webp") ;
+}
+.elements__design_1{
+	background: url("..//img/Dotted\ Shape.webp");
+}
+.elements__design_2 {
+	background: url("..//img/Dotted\ Shape1.svg");
+}
+
+.elements__design_3 {
+	min-height: 100px;
+	background: url("..//img/Oval-2.webp") no-repeat;
+}
+
+.elements__design_4 {
+	min-height: 100px;
+	background: url("..//img/shape.webp") right no-repeat;
+}
+.elements__design_5 {
+	min-height: 100px;
+	background: url("..//img/stripes.webp");
+}
+.content_img{
+	padding: 15px 0;
+}
+.content_img_image img{
+	max-width: 370px;
+	max-height: 300px;
+	border-radius: 15px;
+}
+.content_img_image img:hover {
+	border: 5px solid black;
+}
