@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Project 1</title>
+</head>
+<body>
+    <main>
+        <h1>We are information security.</h1>
+        <div class="number">
+            <a href="tel:+380123456789"><img src="img/call.svg" alt="Зателефонувати">+380123456789</a> 
+            <script>
+                document.addEventListener('DOMContentLoaded', function () {
+                    var img = document.querySelector('img');
+
+                    img.addEventListener('click', function () {
+                        var confirmCall = confirm('Ви бажаєте зателефонувати на цей номер?');
+                        if (confirmCall) {
+                            window.location.href = img.parentElement.href;
+                        }
+                        if (!confirmCall) {
+                            event.preventDefault(); 
+                        }
+                    });
+                });
+            </script>
+
+        </div>
+        <div class="information">
+            <img class="photo" src="img/photojpg.jpg" alt="photo">
+            <div class="text">
+                <h5>Location</h5>
+                <p>121 Rock Sreet, 21 Avenue, <br> New York, NY 92103-9000</p>
+                <img src="img/Rectangle.png" alt="Rectangle">
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatem minus impedit veritatis dolor dolorem beatae necessitatibus enim iure,
+                 fugit natus! Consequatur quo rem pariatur ad! Magnam facilis odit quod suscipit.</p>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

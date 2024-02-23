@@ -1,0 +1,65 @@
+
+@import url("reset.css"); 
+
+
+@font-face {
+    font-family: 'Preciosa';
+    src: url('../fonts/Preciosa.woff2') format('woff2'),
+        url('../fonts/Preciosa.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+body{
+    font-size: 18px;
+    color: #222121;
+}
+main{
+    padding: 150px 100px;
+}
+
+h1{
+    color: #F46A6A ;
+    font-weight: 700;
+    font-size: 54px;
+    text-align: center;
+}
+
+.number{
+    width: 200px;
+    margin: 50px auto;
+}
+img.photo{
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+}
+
+.information{
+    max-width: 700px;
+    margin: 0 auto;
+    display: flex;
+   
+}
+.text{
+    margin-left: 80px;
+    max-width:400px;
+}
+h5{
+    text-transform: uppercase ;
+    color: #F46A6A;
+    font-weight: 700;
+    line-height: 3;
+}
+.text p{
+    line-height: 2;
+}
+
+
+.text img{
+    margin: 25px 0 ;
+}
+
+
+
