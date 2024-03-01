@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Кредитний розрахунок</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <h2>Кредитний розрахунок</h2>
+        <label for="ownHome">Чи маєте ви власне житло?</label>
+        <input type="checkbox" id="ownHome">
+
+        <label for="stableIncome">Чи маєте ви стабільний заробіток?</label>
+        <input type="checkbox" id="stableIncome">
+
+        <label for="age">Ваш вік:</label>
+        <input type="number" id="age" min="18" max="100">
+
+        <label for="income">Ваш дохід (грн):</label>
+        <input type="number" id="income" min="0">
+
+        <button onclick="checkEligibility()">Перевірити</button>
+
+        <p id="result"></p>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
