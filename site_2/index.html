@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="uk">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
@@ -10,25 +10,9 @@
 
 <body>
     <div class="container">
-        <h1>Експертна система для визначення ймовірності підвищення цін</h1>
-        <form id="expert-form">
-            <label for="crop-yield">Врожайність:</label>
-            <select id="crop-yield" name="crop-yield">
-                <option value="низька">Низька</option>
-                <option value="середня">Середня</option>
-                <option value="висока">Висока</option>
-            </select>
-
-            <label for="demand">Попит:</label>
-            <select id="demand" name="demand">
-                <option value="низький">Низький</option>
-                <option value="середній">Середній</option>
-                <option value="високий">Високий</option>
-            </select>
-
-            <button type="submit">Визначити ймовірність</button>
-        </form>
-        <div id="result"></div>
+        <h1>Експертна система фінансового планування</h1>
+        <div id="question-container"></div>
+        <button id="next-button" onclick="nextQuestion()">Наступне запитання</button>
     </div>
     <script src="script.js"></script>
 </body>
