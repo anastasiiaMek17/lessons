@@ -1,0 +1,203 @@
+@import url("reset.css");
+
+@import url("https://fonts.googleapis.com/css?family=Poppins:300,400,500,700&display=swap");
+
+body {
+	font-family: "Poppins", sans-serif;
+	font-size: 18px;
+	color: #9C9C9C;
+    font-weight: 400;
+    line-height: 1.6;
+}
+.wrapper {
+	overflow: clip;
+	min-height: 100%;
+
+	display: flex;
+	flex-direction: column;
+}
+.wrapper > main {
+	flex-grow: 1;
+}
+[class*="__container"] {
+	max-width: 1230px;
+	margin: 0 auto;
+	padding-left: 15px;
+	padding-right: 15px;
+}
+
+.page {
+}
+.page__minimalism-room{
+    padding-top: 95px;
+    padding-bottom: 95px;
+}
+
+.mainimalism-room {
+}
+.mainimalism-room__container {
+}
+.mainimalism-room__header:not(:last-child){
+    margin-bottom: 50px;
+}
+.header-room {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap:40px;
+}
+.header-room__title {
+    text-align: center;
+    font-weight: 700;
+    font-size: 56px;
+    line-height: 1.2;
+    color: black;
+}
+.header-room__subtitle {
+    text-align: center;
+    font-size: 18px;
+    line-height: 1.6;
+    color: black;
+    max-width: 530px;
+}
+
+.minimalism-room__banner img {
+    max-width: 100%;
+}
+.minimalism-room__banner:not(:last-child){
+    margin-bottom: 100px;
+}
+.minimalism-room__content{
+    margin: 0 -10px;
+}
+.minimalism-room__content:not(:last-child){
+    margin-bottom: 80px;
+}
+.content {
+    display: flex;
+    gap: 30px;
+    
+}
+
+.content__left {
+    flex: 0 0 50%;
+    padding: 0 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+}
+.content__footer{
+    display: flex;
+    gap: 80px;
+}
+.content__right {
+    
+}
+.gallery__row {
+}
+.gallery__banner img {
+    max-width: 100%;
+}
+.content__title {
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 1.4;
+    color: #333333;
+}
+.content__title:not(:last-child){
+    margin-bottom: 23px;
+}
+.content__text:not(:last-child){
+margin-bottom: 59px;
+}
+.content__text p:not(:last-child){
+    margin-bottom: 30px;
+    }
+
+.content__date {
+}
+.content__gesign {
+}
+.minimalism-room__gallery{}
+
+.gallery__row{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.gallery__banner:not(:last-child){
+    margin-bottom: 32px;
+    margin-top: 32px;
+}
+
+.gallery__row img{
+    max-width: 100%;
+    
+}
+
+.gallery img{
+    padding: 5px;
+    transition: all 0.8s;
+}
+.gallery img:hover{
+    transform: scale(1.05);
+}
+
+.page__achievement{
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+.achievement__content{
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+.achievement__header{
+    display: flex;
+    gap :25px;
+    align-items: center;
+
+}
+
+.achievement__title{
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.5;
+    text-transform: uppercase;
+    color: black;
+}
+.achievement__line{
+    height: 2px;
+    background-color: black;
+    flex: 0 1 464px;
+}
+
+.content__unit{
+    display: flex;
+    gap: 120px;
+    flex-wrap: wrap;
+}
+.content__image img{
+    max-width: 100%;
+    transition: all 0.9s;
+}
+.content__texts{
+    flex: 0 1 334px;
+    align-self: center;
+}
+.content__title:hover{
+    color: #2C3878;
+}
+.content__image{
+    overflow: hidden;
+}
+.content__image img:hover{
+    transform: scale(1.05);
+}
+
+
+
+
+
+
