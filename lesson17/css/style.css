@@ -270,6 +270,9 @@ margin-bottom: 59px;
 	.content__title{
 		text-align: center;
 	}
+	.gallery__banner{
+		display: none;
+	}
 }
 
 
