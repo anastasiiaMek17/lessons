@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="uk">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Костик Анастасія — Викладач програмування</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header class="hero">
+        <nav class="nav">
+            <a class="logo" href="#">AKostyk</a>
+            <ul class="nav-links">
+                <li><a href="#about">Про мене</a></li>
+                <li><a href="#courses">Дисципліни</a></li>
+                <li><a href="#materials">Матеріали</a></li>
+                <li><a href="#contact">Контакти</a></li>
+            </ul>
+        </nav>
+        <div class="hero-content">
+            <h1 id="typed">Костик Анастасія — Викладач програмування</h1>
+            <p class="subtitle">Навчаю створювати майбутнє через код</p>
+            <a href="#contact" class="cta">Зв'язатися</a>
+        </div>
+    </header>
+
+    <main>
+        <section id="about" class="card-section">
+            <div class="card">
+                <h2>Про мене</h2>
+                <p><strong>Освіта:</strong> Магістр Комп'ютерних наук (ПУЕТ).</p>
+                <p><strong>Досвід:</strong> 6 років викладання програмування у вищих навчальних закладах, розробка
+                    навчальних програм, робота з курсами з веб-розробки та алгоритмів.</p>
+                <p>Педагогічне кредо: <em>створювати середовище, в якому студент може експериментувати та вчитись на
+                        практиці</em>.</p>
+            </div>
+        </section>
+
+        <section id="courses" class="card-section">
+            <h2>Дисципліни</h2>
+            <div class="grid">
+                <div class="course">
+                    <h3>Основи програмування</h3>
+                    <p>Вступ до алгоритмів, синтаксис мов програмування, практичні завдання на Python.</p>
+                </div>
+                <div class="course">
+                    <h3>Веб-розробка</h3>
+                    <p>HTML, CSS, JavaScript, створення адаптивних інтерфейсів, основи фронтенду.</p>
+                </div>
+                <div class="course">
+                    <h3>Алгоритми та структури даних</h3>
+                    <p>Базові алгоритми, складність, оптимізація, структури даних у задачах.</p>
+                </div>
+                <div class="course">
+                    <h3>Інноваційні технології в педагогіці</h3>
+                    <p>ШІ в освіті, цифрові інструменти, інтеграція технологій у методику викладання.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="materials" class="card-section">
+            <h2>Методичні матеріали</h2>
+            <div class="materials-grid">
+                <div class="material">
+                    <h4>Електронний конспект: Штучний інтелект у педагогіці</h4>
+                    <p>Конспект лекції у форматі PDF.</p>
+                    <a class="btn" href="#" aria-disabled="true">Завантажити</a>
+                </div>
+                <div class="material">
+                    <h4>Презентація: Веб-розробка</h4>
+                    <p>Слайди для проведення практичного заняття.</p>
+                    <a class="btn" href="#" aria-disabled="true">Завантажити</a>
+                </div>
+                <div class="material">
+                    <h4>Практичні завдання</h4>
+                    <p>Завдання для лабораторних із прикладами рішень.</p>
+                    <a class="btn" href="#" aria-disabled="true">Переглянути</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="card-section">
+            <h2>Контакти</h2>
+            <div class="contact-grid">
+                <div class="contact-card">
+                    <p><strong>Email:</strong> anastasia.kostyk@example.com</p>
+                    <p><strong>Telegram:</strong> @akostyk_dev</p>
+                    <p><strong>Місцезнаходження:</strong> Україна</p>
+                </div>
+                <form id="contactForm" class="contact-form" onsubmit="return submitForm(event)">
+                    <label>Ім'я<input type="text" id="name" required></label>
+                    <label>Email<input type="email" id="email" required></label>
+                    <label>Повідомлення<textarea id="message" rows="4" required></textarea></label>
+                    <button class="btn" type="submit">Надіслати</button>
+                    <div id="formStatus" class="status"></div>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>© <span id="year"></span> Костик Анастасія — Викладач програмування. Усі права захищено.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
