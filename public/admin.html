@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="uk">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Адмін-панель — TK PROMLINE</title>
+        <link rel="stylesheet" href="css/admin.css" />
+    </head>
+    <body>
+        <div class="login-screen" id="loginScreen">
+            <div class="login-container">
+                <div class="login-header">
+                    <h1>Адмін-панель</h1>
+                    <p>TK PROMLINE</p>
+                </div>
+                <form class="login-form" id="loginForm">
+                    <div class="form-group">
+                        <label for="username">Логін</label>
+                        <input
+                            type="text"
+                            id="username"
+                            name="username"
+                            required
+                            autocomplete="username"
+                        />
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Пароль</label>
+                        <input
+                            type="password"
+                            id="password"
+                            name="password"
+                            required
+                            autocomplete="current-password"
+                        />
+                    </div>
+                    <button type="submit" class="login-button">Увійти</button>
+                    <div class="login-error" id="loginError"></div>
+                </form>
+            </div>
+        </div>
+
+        <div class="admin-panel" id="adminPanel" style="display: none;">
+            <header class="admin-header">
+                <div class="admin-header__content">
+                    <h1>Адмін-панель — Замовлення</h1>
+                    <button class="logout-button" id="logoutButton">Вийти</button>
+                </div>
+            </header>
+
+            <main class="admin-main">
+                <section class="stats-section">
+                    <div class="stat-card">
+                        <div class="stat-value" id="totalOrders">0</div>
+                        <div class="stat-label">Всього замовлень</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value" id="newOrders">0</div>
+                        <div class="stat-label">Нові замовлення</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value" id="carSelectionOrders">0</div>
+                        <div class="stat-label">Вибір авто</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value" id="consultationOrders">0</div>
+                        <div class="stat-label">Консультації</div>
+                    </div>
+                </section>
+
+                <section class="filters-section">
+                    <div class="filters">
+                        <div class="filter-group">
+                            <label for="filterType">Тип замовлення</label>
+                            <select id="filterType">
+                                <option value="">Всі типи</option>
+                                <option value="Вибір авто">Вибір авто</option>
+                                <option value="Консультація">Консультація</option>
+                            </select>
+                        </div>
+                        <div class="filter-group">
+                            <label for="filterStatus">Статус</label>
+                            <select id="filterStatus">
+                                <option value="">Всі статуси</option>
+                                <option value="Новий">Новий</option>
+                                <option value="В обробці">В обробці</option>
+                                <option value="Виконано">Виконано</option>
+                                <option value="Скасовано">Скасовано</option>
+                            </select>
+                        </div>
+                        <div class="filter-group">
+                            <label for="filterDate">Дата від</label>
+                            <input type="date" id="filterDate" />
+                        </div>
+                        <div class="filter-group">
+                            <label for="searchInput">Пошук</label>
+                            <input
+                                type="text"
+                                id="searchInput"
+                                placeholder="Ім'я, телефон..."
+                            />
+                        </div>
+                        <button class="clear-filters" id="clearFilters">
+                            Очистити
+                        </button>
+                    </div>
+                </section>
+
+                <section class="orders-section">
+                    <div class="table-container">
+                        <table class="orders-table">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Дата</th>
+                                    <th>Час</th>
+                                    <th>Тип</th>
+                                    <th>Ім'я</th>
+                                    <th>Телефон</th>
+                                    <th>Авто</th>
+                                    <th>Питання</th>
+                                    <th>Статус</th>
+                                    <th>Дії</th>
+                                </tr>
+                            </thead>
+                            <tbody id="ordersTableBody">
+                                <tr>
+                                    <td colspan="10" class="loading">
+                                        Завантаження...
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+            </main>
+        </div>
+
+        <div class="modal" id="statusModal">
+            <div class="modal-content">
+                <h2>Змінити статус</h2>
+                <p>Замовлення: <strong id="modalOrderId"></strong></p>
+                <select id="newStatus" class="status-select">
+                    <option value="Новий">Новий</option>
+                    <option value="В обробці">В обробці</option>
+                    <option value="Виконано">Виконано</option>
+                    <option value="Скасовано">Скасовано</option>
+                </select>
+                <div class="modal-actions">
+                    <button class="btn-primary" id="saveStatus">Зберегти</button>
+                    <button class="btn-secondary" id="cancelStatus">Скасувати</button>
+                </div>
+            </div>
+        </div>
+
+        <script src="js/admin.js"></script>
+    </body>
+</html>
+
