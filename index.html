@@ -1,0 +1,399 @@
+<!doctype html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Віш-ліст до дня народження</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Nunito:wght@400;600;700&family=Oswald:wght@600;700&display=swap">
+<style>
+/* Сафарі: оливкова шапка зі звірятами, що визирають знизу, і бежеві картки-бирки. */
+:root {
+  --sand: #F2E7CD;
+  --paper: #FBF5E4;
+  --brown: #4A3322;
+  --brown-soft: #7A6046;
+  --tan: #D9C69B;
+  --olive: #5E6B2A;
+  --olive-deep: #48521F;
+  --olive-light: #8A9A45;
+  --mustard: #E0A93B;
+  --taken-bg: #DEDACE;
+  --taken-line: #A9A392;
+  --taken-ink: #86816F;
+  --font-display: "Oswald", "Arial Narrow", Impact, sans-serif;
+  --font-body: "Nunito", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-hand: "Caveat", "Segoe Script", cursive;
+  color-scheme: light;
+}
+* { box-sizing: border-box; }
+html { background: var(--sand); }
+body {
+  margin: 0; color: var(--brown);
+  background-color: var(--sand);
+  background-image: radial-gradient(circle at 1px 1px, rgba(94,107,42,.13) 1.5px, transparent 0);
+  background-size: 24px 24px;
+  font-family: var(--font-body); font-size: 16px; line-height: 1.5;
+  padding: 20px max(16px, env(safe-area-inset-right, 0px)) 64px max(16px, env(safe-area-inset-left, 0px));
+}
+.wrap { max-width: 64rem; margin: 0 auto; display: flex; flex-direction: column; gap: 24px; }
+
+/* ---------- Шапка ---------- */
+header {
+  position: relative; overflow: hidden; isolation: isolate;
+  background: radial-gradient(120% 140% at 85% 0%, #6F7D33 0%, var(--olive) 45%, var(--olive-deep) 100%);
+  color: #F8EFD8; border-radius: 26px;
+  padding: 28px 28px 0; border: 3px solid var(--brown);
+  box-shadow: 0 6px 0 var(--brown);
+}
+.hero { display: flex; flex-wrap: wrap; align-items: center; gap: 24px; position: relative; z-index: 2; }
+.hero-text { flex: 1 1 20rem; display: flex; flex-direction: column; gap: 12px; min-width: 0; }
+.eyebrow { font-family: var(--font-hand); font-weight: 700; font-size: 1.7rem; line-height: 1; color: #F3C75E; }
+h1 {
+  font-family: var(--font-display); font-weight: 700; text-transform: uppercase; letter-spacing: .02em;
+  font-size: clamp(2.2rem, 9vw, 4.2rem); line-height: 1.02; margin: 0; text-wrap: balance; overflow-wrap: anywhere;
+}
+.when { margin: 0; font-weight: 700; font-size: 1.1rem; }
+.msg { margin: 0; max-width: 40rem; color: #EADFC2; font-size: 1.02rem; overflow-wrap: anywhere; }
+.dress {
+  align-self: flex-start; font-weight: 700; font-size: .9rem; letter-spacing: .02em;
+  background: var(--sand); color: var(--brown); border: 2px solid var(--brown);
+  padding: 6px 14px; border-radius: 999px;
+}
+.photo {
+  flex: 0 0 auto; margin: 0; width: clamp(130px, 28vw, 180px); aspect-ratio: 1; border-radius: 50%;
+  border: 6px solid var(--sand); box-shadow: 0 0 0 4px var(--brown), 0 8px 0 4px rgba(0,0,0,.18);
+  transform: rotate(-4deg); overflow: hidden; background: var(--tan);
+}
+.photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+.tally { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 16px; margin-top: 4px; }
+.tally-num { font-family: var(--font-display); font-weight: 600; letter-spacing: .03em; font-size: 1rem; background: var(--mustard); color: var(--brown); padding: 5px 14px; border-radius: 999px; font-variant-numeric: tabular-nums; border: 2px solid var(--brown); }
+.dots { display: flex; flex-wrap: wrap; gap: 6px; }
+.dot { width: 14px; height: 14px; border-radius: 50%; background: #F3C75E; border: 2px solid #F3C75E; }
+.dot.off { background: transparent; border-color: rgba(248,239,216,.5); }
+
+/* Звірята визирають із нижнього краю шапки */
+.zoo { position: relative; z-index: 2; height: 112px; margin: 18px -28px 0; padding: 0 12px; display: flex; justify-content: space-around; align-items: flex-end; overflow: hidden; }
+.zoo svg { flex: 0 0 auto; overflow: visible; }
+.lion { height: 112px; margin-bottom: -10px; }
+.giraffe { height: 150px; margin-bottom: -46px; }
+.elephant { height: 112px; margin-bottom: -6px; }
+.bob { animation: bob 3.6s ease-in-out infinite; transform-origin: 50% 100%; }
+.bob.d1 { animation-delay: -1.2s; }
+.bob.d2 { animation-delay: -2.4s; }
+.blink { transform-box: fill-box; transform-origin: center; animation: blink 4.5s infinite; }
+.trunk { transform-box: fill-box; transform-origin: 50% 0; animation: sway 3s ease-in-out infinite; }
+@keyframes bob { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-9px); } }
+@keyframes blink { 0%,92%,100% { transform: scaleY(1); } 96% { transform: scaleY(.08); } }
+@keyframes sway { 0%,100% { transform: rotate(-4deg); } 50% { transform: rotate(5deg); } }
+
+/* Листя, що повільно падає */
+.leaf { position: absolute; top: -24px; width: 16px; height: 16px; border-radius: 0 100% 0 100%; background: var(--olive-light); opacity: .55; z-index: 1; animation: fall 11s linear infinite; }
+.leaf:nth-child(1) { left: 8%; animation-delay: -2s; }
+.leaf:nth-child(2) { left: 24%; animation-delay: -7s; width: 12px; height: 12px; background: #B78A4F; }
+.leaf:nth-child(3) { left: 46%; animation-delay: -4s; }
+.leaf:nth-child(4) { left: 63%; animation-delay: -9s; width: 12px; height: 12px; background: #B78A4F; }
+.leaf:nth-child(5) { left: 78%; animation-delay: -1s; }
+.leaf:nth-child(6) { left: 92%; animation-delay: -6s; width: 20px; height: 20px; }
+@keyframes fall {
+  0% { transform: translate(0, 0) rotate(0); }
+  50% { transform: translate(24px, 190px) rotate(180deg); }
+  100% { transform: translate(-10px, 400px) rotate(360deg); }
+}
+
+/* ---------- Пояснення, банер ---------- */
+.how { margin: 0; max-width: 44rem; font-size: 1rem; color: var(--brown-soft); }
+.how strong { color: var(--brown); }
+.banner { border: 2px solid var(--tan); background: var(--paper); border-radius: 12px; padding: 12px 16px; font-size: .95rem; max-width: 44rem; }
+.banner[hidden], .toast[hidden], .photo[hidden], .dress[hidden] { display: none; }
+
+/* ---------- Картки подарунків ---------- */
+.grid { display: grid; gap: 16px; grid-template-columns: repeat(auto-fill, minmax(min(100%, 17rem), 1fr)); }
+.card {
+  position: relative; background: var(--paper); border: 2px solid var(--tan); border-radius: 18px;
+  padding: 20px 18px 18px; display: flex; flex-direction: column; gap: 10px; min-width: 0;
+  box-shadow: 0 4px 0 var(--tan);
+}
+.card::before { content: ""; position: absolute; top: 10px; right: 12px; width: 10px; height: 10px; border-radius: 50%; background: var(--sand); border: 2px solid var(--tan); }
+.card-head { display: flex; flex-direction: column; gap: 6px; padding-right: 18px; }
+.card h3 { margin: 0; font-size: 1.15rem; font-weight: 700; line-height: 1.25; overflow-wrap: anywhere; min-width: 0; }
+.price { align-self: flex-start; font-weight: 700; font-size: .85rem; color: var(--olive-deep); background: #E8E4C0; border-radius: 999px; padding: 2px 10px; font-variant-numeric: tabular-nums; }
+.note { margin: 0; color: var(--brown-soft); font-size: .95rem; overflow-wrap: anywhere; }
+.look { font-size: .9rem; font-weight: 700; color: var(--olive-deep); width: fit-content; }
+.card-foot { margin-top: auto; padding-top: 6px; display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+.tag { font-size: .8rem; font-weight: 700; background: var(--mustard); color: var(--brown); padding: 4px 10px; border-radius: 999px; border: 2px solid var(--brown); }
+
+.card.taken { background: var(--taken-bg); border: 2px dashed var(--taken-line); box-shadow: none; color: var(--taken-ink); }
+.card.taken::before { border-color: var(--taken-line); background: var(--taken-bg); }
+.card.taken h3 { text-decoration: line-through; text-decoration-thickness: 2px; }
+.card.taken .note, .card.taken .look { color: var(--taken-ink); }
+.card.taken .price { background: #D1CDBF; color: var(--taken-ink); }
+
+button { font: inherit; cursor: pointer; }
+.btn { border: 2px solid var(--brown); border-radius: 12px; padding: 10px 16px; font-weight: 700; font-size: .95rem; background: var(--olive); color: #FBF3DC; min-height: 44px; box-shadow: 0 3px 0 var(--brown); transition: transform .08s, box-shadow .08s; }
+.btn:hover:not(:disabled) { background: var(--olive-deep); }
+.btn:active:not(:disabled) { transform: translateY(3px); box-shadow: 0 0 0 var(--brown); }
+.btn:disabled { cursor: not-allowed; background: transparent; color: var(--taken-ink); border-color: var(--taken-line); box-shadow: none; }
+.btn.ghost { background: transparent; color: var(--brown); box-shadow: none; border-color: var(--tan); }
+.btn.small { min-height: 36px; padding: 6px 12px; font-size: .85rem; }
+a:focus-visible, button:focus-visible { outline: 3px solid var(--mustard); outline-offset: 2px; }
+.empty { border: 2px dashed var(--tan); border-radius: 16px; padding: 28px 20px; text-align: center; color: var(--brown-soft); background: var(--paper); }
+.toast { position: fixed; left: 50%; transform: translateX(-50%); bottom: calc(20px + env(safe-area-inset-bottom, 0px)); background: var(--brown); color: #F8EFD8; padding: 10px 16px; border-radius: 12px; font-size: .92rem; max-width: min(92vw, 28rem); z-index: 20; }
+
+@media (max-width: 640px) {
+  header { padding: 22px 18px 0; border-radius: 22px; }
+  .zoo { margin-inline: -18px; padding: 0 4px; }
+  .photo { order: -1; margin-inline: auto; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .bob, .blink, .trunk, .leaf { animation: none; }
+  .leaf { display: none; }
+  .btn { transition: none; }
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <span class="leaf"></span><span class="leaf"></span><span class="leaf"></span><span class="leaf"></span><span class="leaf"></span><span class="leaf"></span>
+    <div class="hero">
+      <div class="hero-text">
+        <div class="eyebrow">Сафарі-вечірка · віш-ліст</div>
+        <h1 id="title">Віш-ліст</h1>
+        <p class="when" id="when" hidden></p>
+        <p class="msg" id="msg" hidden></p>
+        <div class="dress" id="dress" hidden></div>
+        <div class="tally" id="tally" hidden>
+          <span class="tally-num" id="tally-num"></span>
+          <div class="dots" id="dots" aria-hidden="true"></div>
+        </div>
+      </div>
+      <figure class="photo" id="photo" hidden><img id="photo-img" alt="Іменинник"></figure>
+    </div>
+
+    <div class="zoo" aria-hidden="true">
+      <!-- Лев -->
+      <svg class="lion bob" viewBox="0 0 120 120" width="112" height="112">
+        <g fill="#8A5A2B">
+          <circle cx="60" cy="62" r="44"/>
+          <circle cx="100" cy="62" r="14"/><circle cx="88.3" cy="90.3" r="14"/><circle cx="60" cy="102" r="14"/><circle cx="31.7" cy="90.3" r="14"/>
+          <circle cx="20" cy="62" r="14"/><circle cx="31.7" cy="33.7" r="14"/><circle cx="60" cy="22" r="14"/><circle cx="88.3" cy="33.7" r="14"/>
+        </g>
+        <circle cx="38" cy="36" r="9" fill="#E9C27F"/><circle cx="82" cy="36" r="9" fill="#E9C27F"/>
+        <circle cx="38" cy="36" r="4.5" fill="#C98E5B"/><circle cx="82" cy="36" r="4.5" fill="#C98E5B"/>
+        <circle cx="60" cy="64" r="31" fill="#E9C27F"/>
+        <ellipse cx="60" cy="76" rx="14" ry="10" fill="#F8E7BE"/>
+        <path d="M54 68 L66 68 L60 76 Z" fill="#5A3519"/>
+        <path d="M60 76 L60 82 M60 82 Q54 87 49 82 M60 82 Q66 87 71 82" stroke="#5A3519" stroke-width="2.4" fill="none" stroke-linecap="round"/>
+        <g class="blink"><circle cx="48" cy="58" r="4" fill="#3B2A1A"/><circle cx="72" cy="58" r="4" fill="#3B2A1A"/></g>
+        <circle cx="46.8" cy="56.6" r="1.3" fill="#fff"/><circle cx="70.8" cy="56.6" r="1.3" fill="#fff"/>
+        <circle cx="40" cy="70" r="5" fill="#E58E6B" opacity=".55"/><circle cx="80" cy="70" r="5" fill="#E58E6B" opacity=".55"/>
+      </svg>
+
+      <!-- Жирафа -->
+      <svg class="giraffe bob d1" viewBox="0 0 120 160" width="90" height="150">
+        <rect x="48" y="60" width="28" height="100" rx="10" fill="#E2B25A"/>
+        <g fill="#A8692F"><circle cx="58" cy="84" r="6"/><circle cx="68" cy="106" r="7"/><circle cx="57" cy="126" r="6.5"/><circle cx="67" cy="146" r="6"/></g>
+        <path d="M48 70 Q40 60 44 50 L60 56 Z" fill="#E2B25A"/>
+        <g stroke="#8A5A2B" stroke-width="4" stroke-linecap="round"><path d="M52 26 L50 11"/><path d="M72 26 L74 11"/></g>
+        <circle cx="50" cy="9" r="5" fill="#8A5A2B"/><circle cx="74" cy="9" r="5" fill="#8A5A2B"/>
+        <ellipse cx="34" cy="38" rx="11" ry="5.5" transform="rotate(-22 34 38)" fill="#E2B25A"/>
+        <ellipse cx="90" cy="38" rx="11" ry="5.5" transform="rotate(22 90 38)" fill="#E2B25A"/>
+        <ellipse cx="62" cy="44" rx="26" ry="22" fill="#E2B25A"/>
+        <g fill="#A8692F"><circle cx="62" cy="28" r="4"/><circle cx="76" cy="34" r="3.2"/></g>
+        <ellipse cx="62" cy="57" rx="15" ry="10" fill="#F6E3B8"/>
+        <circle cx="56" cy="56" r="1.8" fill="#5A3519"/><circle cx="68" cy="56" r="1.8" fill="#5A3519"/>
+        <path d="M56 62 Q62 67 68 62" stroke="#5A3519" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+        <g class="blink"><circle cx="51" cy="42" r="3.8" fill="#3B2A1A"/><circle cx="73" cy="42" r="3.8" fill="#3B2A1A"/></g>
+        <circle cx="50" cy="40.8" r="1.2" fill="#fff"/><circle cx="72" cy="40.8" r="1.2" fill="#fff"/>
+        <circle cx="42" cy="50" r="4.5" fill="#E58E6B" opacity=".55"/><circle cx="82" cy="50" r="4.5" fill="#E58E6B" opacity=".55"/>
+      </svg>
+
+      <!-- Слоненя -->
+      <svg class="elephant bob d2" viewBox="0 0 140 130" width="122" height="112">
+        <circle cx="30" cy="58" r="26" fill="#A58D72"/><circle cx="110" cy="58" r="26" fill="#A58D72"/>
+        <circle cx="30" cy="58" r="15" fill="#E2C7B0"/><circle cx="110" cy="58" r="15" fill="#E2C7B0"/>
+        <circle cx="70" cy="60" r="38" fill="#BBA58B"/>
+        <g class="trunk"><path d="M70 74 Q70 108 86 108 Q96 108 96 98" stroke="#BBA58B" stroke-width="17" fill="none" stroke-linecap="round"/></g>
+        <path d="M54 84 Q50 98 58 102" stroke="#FBF1D8" stroke-width="6" fill="none" stroke-linecap="round"/>
+        <path d="M86 84 Q90 98 82 102" stroke="#FBF1D8" stroke-width="6" fill="none" stroke-linecap="round"/>
+        <g class="blink"><circle cx="56" cy="54" r="4" fill="#3B2A1A"/><circle cx="84" cy="54" r="4" fill="#3B2A1A"/></g>
+        <circle cx="54.8" cy="52.6" r="1.3" fill="#fff"/><circle cx="82.8" cy="52.6" r="1.3" fill="#fff"/>
+        <circle cx="46" cy="66" r="5" fill="#E58E6B" opacity=".55"/><circle cx="94" cy="66" r="5" fill="#E58E6B" opacity=".55"/>
+      </svg>
+    </div>
+  </header>
+
+  <p class="how"><strong>Як це працює.</strong> Оберіть подарунок і натисніть «Забронювати». Він стане сірим для всіх, тож його не купить ще хтось.</p>
+  <div class="banner" id="banner" hidden></div>
+
+  <main>
+    <div class="grid" id="grid" aria-live="polite"></div>
+    <div class="empty" id="empty" hidden></div>
+  </main>
+</div>
+<div class="toast" id="toast" role="status" hidden></div>
+
+<script src="config.js"></script>
+<script type="module">
+const cfg = window.WISHLIST || { gifts: [] };
+const fbCfg = window.FIREBASE_CONFIG;
+const $ = (id) => document.getElementById(id);
+const state = { gifts: cfg.gifts || [], res: {}, uid: null, ready: false, demo: false, busy: {}, error: "" };
+let backend = null;
+
+function el(tag, props = {}, ...kids) {
+  const e = document.createElement(tag);
+  for (const [k, v] of Object.entries(props)) {
+    if (k === "class") e.className = v;
+    else if (k === "text") e.textContent = v;
+    else if (k.startsWith("on")) e.addEventListener(k.slice(2), v);
+    else e.setAttribute(k, v);
+  }
+  e.append(...kids.filter(Boolean));
+  return e;
+}
+function safeUrl(u) {
+  if (!u) return null;
+  try {
+    const x = new URL(/^https?:\/\//i.test(u) ? u : "https://" + u);
+    return x.protocol === "http:" || x.protocol === "https:" ? x.href : null;
+  } catch { return null; }
+}
+let toastTimer;
+function toast(t) {
+  const n = $("toast"); n.textContent = t; n.hidden = false;
+  clearTimeout(toastTimer); toastTimer = setTimeout(() => (n.hidden = true), 4000);
+}
+
+/* Фото іменинника: показуємо, лише якщо файл вказано і він завантажився */
+(function setupPhoto() {
+  if (!cfg.photo) return;
+  const img = $("photo-img");
+  img.addEventListener("load", () => { $("photo").hidden = false; });
+  img.addEventListener("error", () => { $("photo").hidden = true; });
+  img.src = cfg.photo;
+})();
+
+function render() {
+  document.title = cfg.childName ? "Віш-ліст: " + cfg.childName : "Віш-ліст до дня народження";
+  $("title").textContent = cfg.childName || "Віш-ліст";
+  $("when").textContent = cfg.date || ""; $("when").hidden = !cfg.date;
+  $("msg").textContent = cfg.message || ""; $("msg").hidden = !cfg.message;
+  $("dress").textContent = cfg.dressCode || ""; $("dress").hidden = !cfg.dressCode;
+
+  const total = state.gifts.length;
+  $("tally").hidden = !(state.ready && total);
+  if (state.ready && total) {
+    const free = state.gifts.filter((g) => !state.res[g.id]).length;
+    $("tally-num").textContent = `Вільно: ${free} з ${total}`;
+    $("dots").replaceChildren(...state.gifts.map((g) => el("span", { class: "dot" + (state.res[g.id] ? " off" : "") })));
+  }
+
+  const b = $("banner");
+  if (state.error) { b.hidden = false; b.textContent = state.error; }
+  else if (state.demo) { b.hidden = false; b.textContent = "Демо-режим: бронь видно тільки в цьому браузері. Підключіть Firebase за інструкцією, щоб її бачили всі гості."; }
+  else b.hidden = true;
+
+  const grid = $("grid"), empty = $("empty");
+  grid.replaceChildren();
+  if (!state.ready) { empty.hidden = false; empty.textContent = "Завантажуємо список…"; return; }
+  if (!total) { empty.hidden = false; empty.textContent = "Список поки порожній."; return; }
+  empty.hidden = true;
+  state.gifts.forEach((g) => grid.append(card(g)));
+}
+
+function card(g) {
+  const by = state.res[g.id], taken = !!by, mine = taken && by === state.uid, url = safeUrl(g.link);
+  const c = el("article", { class: "card" + (taken ? " taken" : "") });
+  const head = el("div", { class: "card-head" }, el("h3", { text: g.title || "Без назви" }));
+  if (g.price) head.append(el("span", { class: "price", text: g.price }));
+  c.append(head);
+  if (g.note) c.append(el("p", { class: "note", text: g.note }));
+  if (url) c.append(el("a", { class: "look", href: url, target: "_blank", rel: "noopener noreferrer", text: "Подивитись товар" }));
+  const foot = el("div", { class: "card-foot" });
+  if (!taken) {
+    const b = el("button", { class: "btn", type: "button", text: state.busy[g.id] ? "Бронюємо…" : "Забронювати", onclick: () => reserve(g) });
+    if (!state.uid || state.busy[g.id]) b.disabled = true;
+    foot.append(b);
+  } else if (mine) {
+    foot.append(el("span", { class: "tag", text: "Ви забронювали" }));
+    const cb = el("button", { class: "btn ghost small", type: "button", text: "Скасувати бронь", onclick: () => release(g) });
+    if (state.busy[g.id]) cb.disabled = true;
+    foot.append(cb);
+  } else {
+    const t = el("button", { class: "btn", type: "button", text: "Заброньовано" });
+    t.disabled = true; foot.append(t);
+  }
+  c.append(foot);
+  return c;
+}
+
+async function reserve(g) {
+  if (state.busy[g.id] || !state.uid) return;
+  state.busy[g.id] = true; render();
+  try {
+    await backend.reserve(g.id);
+    toast("Готово. Для інших гостей цей подарунок тепер сірий.");
+  } catch (e) {
+    toast(e && e.code === "permission-denied" ? "Цей подарунок уже забронювали." : "Не вдалося забронювати. Спробуйте ще раз.");
+  } finally { delete state.busy[g.id]; render(); }
+}
+async function release(g) {
+  if (state.busy[g.id]) return;
+  state.busy[g.id] = true; render();
+  try { await backend.release(g.id); toast("Бронь знято."); }
+  catch { toast("Не вдалося зняти бронь. Спробуйте ще раз."); }
+  finally { delete state.busy[g.id]; render(); }
+}
+
+/* ---------- Демо-режим: усе зберігається в браузері ---------- */
+function demoBackend() {
+  const KEY = "wishlist-demo-reservations";
+  const read = () => { try { return JSON.parse(localStorage.getItem(KEY)) || {}; } catch { return {}; } };
+  const write = (o) => { try { localStorage.setItem(KEY, JSON.stringify(o)); } catch {} };
+  state.demo = true; state.uid = "demo-user";
+  return {
+    start() { state.res = read(); state.ready = true; render(); },
+    async reserve(id) { const r = read(); if (r[id]) throw { code: "permission-denied" }; r[id] = state.uid; write(r); state.res = r; },
+    async release(id) { const r = read(); delete r[id]; write(r); state.res = r; }
+  };
+}
+
+/* ---------- Firebase: бронь спільна для всіх гостей ---------- */
+async function firebaseBackend() {
+  const V = "10.14.1", base = `https://www.gstatic.com/firebasejs/${V}/`;
+  const [app, auth, fs] = await Promise.all([
+    import(base + "firebase-app.js"), import(base + "firebase-auth.js"), import(base + "firebase-firestore.js")
+  ]);
+  const a = app.initializeApp(fbCfg);
+  const au = auth.getAuth(a), db = fs.getFirestore(a);
+  const cred = await auth.signInAnonymously(au);
+  state.uid = cred.user.uid;
+  return {
+    start() {
+      fs.onSnapshot(fs.collection(db, "reservations"), (snap) => {
+        const r = {}; snap.forEach((d) => { const x = d.data(); if (x && x.by) r[d.id] = x.by; });
+        state.res = r; state.ready = true; state.error = ""; render();
+      }, () => { state.error = "Не вдалося завантажити бронювання. Оновіть сторінку."; state.ready = true; render(); });
+    },
+    reserve: (id) => fs.setDoc(fs.doc(db, "reservations", id), { by: state.uid, at: fs.serverTimestamp() }),
+    release: (id) => fs.deleteDoc(fs.doc(db, "reservations", id))
+  };
+}
+
+(async function init() {
+  render();
+  try {
+    backend = fbCfg && fbCfg.apiKey ? await firebaseBackend() : demoBackend();
+  } catch (e) {
+    state.error = "Не вдалося підключитися до Firebase. Перевірте налаштування в config.js та інструкцію.";
+    state.ready = true; render(); return;
+  }
+  backend.start();
+})();
+</script>
+</body>
+</html>
