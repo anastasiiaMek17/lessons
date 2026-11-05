@@ -117,6 +117,8 @@ h1 {
   box-shadow: 0 4px 0 var(--tan);
 }
 .card::before { content: ""; position: absolute; top: 10px; right: 12px; width: 10px; height: 10px; border-radius: 50%; background: var(--sand); border: 2px solid var(--tan); }
+.gift-img { display: block; width: calc(100% + 36px); margin: -20px -18px 4px; max-width: none; aspect-ratio: 4 / 3; object-fit: cover; border-radius: 16px 16px 0 0; background: var(--tan); }
+.card.taken .gift-img { filter: grayscale(1); opacity: .55; }
 .card-head { display: flex; flex-direction: column; gap: 6px; padding-right: 18px; }
 .card h3 { margin: 0; font-size: 1.15rem; font-weight: 700; line-height: 1.25; overflow-wrap: anywhere; min-width: 0; }
 .price { align-self: flex-start; font-weight: 700; font-size: .85rem; color: var(--olive-deep); background: #E8E4C0; border-radius: 999px; padding: 2px 10px; font-variant-numeric: tabular-nums; }
@@ -308,11 +310,16 @@ function render() {
 function card(g) {
   const by = state.res[g.id], taken = !!by, mine = taken && by === state.uid, url = safeUrl(g.link);
   const c = el("article", { class: "card" + (taken ? " taken" : "") });
+  if (g.image) {
+    const im = el("img", { class: "gift-img", src: g.image, alt: g.title || "Подарунок", loading: "lazy" });
+    im.addEventListener("error", () => im.remove());
+    c.append(im);
+  }
   const head = el("div", { class: "card-head" }, el("h3", { text: g.title || "Без назви" }));
   if (g.price) head.append(el("span", { class: "price", text: g.price }));
   c.append(head);
   if (g.note) c.append(el("p", { class: "note", text: g.note }));
-  if (url) c.append(el("a", { class: "look", href: url, target: "_blank", rel: "noopener noreferrer", text: "Подивитись товар" }));
+  if (url) c.append(el("a", { class: "look", href: url, target: "_blank", rel: "noopener noreferrer", text: "Де купити" }));
   const foot = el("div", { class: "card-foot" });
   if (!taken) {
     const b = el("button", { class: "btn", type: "button", text: state.busy[g.id] ? "Бронюємо…" : "Забронювати", onclick: () => reserve(g) });
