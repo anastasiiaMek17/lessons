@@ -46,14 +46,14 @@ window.WISHLIST = {
       title: "Магнітні пазли",
       price: "180 грн за одну тему",
       link: "https://www.instagram.com/p/DSC49UfCkO9/",
-      image: "img/1.png",
+      image: "img/1.webp",
       note: "Теми та де купити дивіться за посиланням"
     },{
     id: "magnetic-constr",
       title: "Магнітний конструктор",
       price: "995 грн",
       link: "https://www.instagram.com/reel/DfKZXW4sQtN/?rpxt=MTUzc2pwaWhmZWIx",
-      image: "img/2.png",
+      image: "img/2.webp",
       note: "Де купити дивіться за посиланням"
     },
     {
@@ -61,7 +61,7 @@ window.WISHLIST = {
       title: "Дерев'яний набір",
       price: "349 грн",
       link: "https://www.instagram.com/p/DcagSEyDCWr/?dlrf=YzV0YnBhODFpbWZ0",
-      image: "img/3.png",
+      image: "img/3.webp",
       note: "Де купити дивіться за посиланням"
     },
     {
@@ -69,7 +69,7 @@ window.WISHLIST = {
       title: "Книжка",
       price: "358 грн",
       link: "https://www.instagram.com/p/DcagSEyDCWr/?dlrf=YzV0YnBhODFpbWZ0",
-      image: "img/4.png",
+      image: "img/4.webp",
       note: "Де купити дивіться за посиланням"
     },
     {
@@ -77,7 +77,7 @@ window.WISHLIST = {
       title: "Бебі-Сортер",
       price: "560 грн",
       link: "https://www.instagram.com/p/DeBvdQdOnRQ/?rpxt=Y2M2ajh1N2duM3d5",
-      image: "img/6.png",
+      image: "img/6.webp",
       note: "Де купити дивіться за посиланням"
     },
     {
@@ -85,7 +85,7 @@ window.WISHLIST = {
       title: "Пазли",
       price: "499 грн",
       link: "https://www.instagram.com/reel/DeY_IUHiAL9/?mdxt=MXRneTZpamR1a3U1aQ==",
-      image: "img/5.png",
+      image: "img/5.webp",
       note: "Де купити дивіться за посиланням"
     },
     {
@@ -93,7 +93,7 @@ window.WISHLIST = {
       title: "Тісто для ліплення 6 карток, формочки, кольорове тісто: 10 штук",
       price: "325 грн",
       link: "https://www.instagram.com/reel/DYByi8kIyVt/?mdxt=MXExbm4xaDVjdDY5OA==",
-      image: "img/8.png",
+      image: "img/8.webp",
       note: "Де купити дивіться за посиланням"
     },
     {
@@ -101,7 +101,7 @@ window.WISHLIST = {
       title: "Сортувальні комодики",
       price: "500/550 грн",
       link: "https://www.instagram.com/reel/DX8vzGSo3ow/?mdxt=MTdhNTcyNnhuMmQ4Nw==",
-      image: "img/7.png",
+      image: "img/7.webp",
       note: "Де купити дивіться за посиланням"
     },
     {
@@ -109,7 +109,7 @@ window.WISHLIST = {
       title: "Бокси для сортування",
       price: "385 грн",
       link: "https://www.instagram.com/p/DSCeF2LDL6n/?vrfl=MThxcXdiOTRiN2dtZg==",
-      image: "img/9.png",
+      image: "img/9.webp",
       note: "Де купити дивіться за посиланням"
     },
     {
@@ -117,7 +117,7 @@ window.WISHLIST = {
       title: "Магнітний конструктор",
       price: "640 грн",
       link: "https://www.instagram.com/p/DcagSEyDCWr/?dlrf=YzV0YnBhODFpbWZ0",
-      image: "img/10.png",
+      image: "img/10.webp",
       note: "Де купити дивіться за посиланням"
     },
     {
@@ -125,7 +125,7 @@ window.WISHLIST = {
       title: "КАРТКИ «Пиши-стирай»",
       price: "358 грн",
       link: "https://www.instagram.com/p/DcLWN-FEeUT/?img_index=2&mdxt=MW52bWc2dmNiaGlqOA==",
-      image: "img/11.png",
+      image: "img/11.webp",
       note: "Де купити дивіться за посиланням"
     },
     {
@@ -133,7 +133,7 @@ window.WISHLIST = {
       title: "Навчальні постери з багаторазовими наліпками",
       price: "249 грн",
       link: "https://www.instagram.com/reel/DacvDv9qhaw/?cplk=djFyZDV4b3lmNnIz",
-      image: "img/12.png",
+      image: "img/12.webp",
       note: "Де купити дивіться за посиланням"
     },
     {
@@ -141,7 +141,7 @@ window.WISHLIST = {
       title: "ЦИЛІНДРИ МОНТЕСОРІ КОЛЬОРОВІ",
       price: "515 грн",
       link: "https://www.instagram.com/reel/DRsVQZPjNLm/?psln=MXg1a3l1Y3FuYTNxcw==",
-      image: "img/13.png",
+      image: "img/13.webp",
       note: "Де купити дивіться за посиланням"
     },
     {
@@ -149,7 +149,7 @@ window.WISHLIST = {
       title: "Розвиваюча книжечка Майстер ",
       price: "150 грн",
       link: "https://www.instagram.com/reel/DX8vtn1oUNt/?exln=MWc0N2hvbGxjbHhnZw==",
-      image: "img/14.png",
+      image: "img/14.webp",
       note: "Де купити дивіться за посиланням"
     },
     {
@@ -157,7 +157,7 @@ window.WISHLIST = {
       title: "LED ДОШКА-НІЧНИК для малювання",
       price: "325 грн",
       link: "https://www.instagram.com/reel/DQrhZe6DNKj/?vrfl=aTltZHBvcHljcWk4",
-      image: "img/15.png",
+      image: "img/15.webp",
       note: "Де купити дивіться за посиланням"
     },
     {
@@ -165,7 +165,7 @@ window.WISHLIST = {
       title: "БАГАТОФУНКЦІОНАЛЬНА МОЗАЇКА ",
       price: "950 грн",
       link: "https://www.instagram.com/reel/DOs51JHiuIA/?cplk=a3g3YW5zOWFiYmlq",
-      image: "img/16.png",
+      image: "img/16.webp",
       note: "Де купити дивіться за посиланням"
     },
     {
@@ -173,7 +173,7 @@ window.WISHLIST = {
       title: "Розвиваючий збірник ",
       price: "450 грн",
       link: "https://www.instagram.com/reel/DfU4LlNOLUV/?vrfl=MXhqYWM1OXowdmo0MQ==",
-      image: "img/17.png",
+      image: "img/17.webp",
       note: "Де купити дивіться за посиланням"
     },
     {
@@ -181,7 +181,7 @@ window.WISHLIST = {
       title: "Конструктор",
       price: "550 грн",
       link: "https://www.instagram.com/reel/Dei0xcmO4kM/?psln=MTJuNWE3aDN3ODdyaA==",
-      image: "img/18.png",
+      image: "img/18.webp",
       note: "Де купити дивіться за посиланням"
     },
     {
@@ -189,7 +189,7 @@ window.WISHLIST = {
       title: "Сортер 7в1",
       price: "580 грн",
       link: "https://www.instagram.com/p/DfChHWljnwr/?img_index=3&srtk=NTRjYW1rbDVkeWE1",
-      image: "img/19.png",
+      image: "img/19.webp",
       note: "Де купити дивіться за посиланням"
     },
     {
@@ -197,7 +197,7 @@ window.WISHLIST = {
       title: "Графомоторні доріжки Олівчики",
       price: "280 грн",
       link: "https://www.instagram.com/p/De_WqpJDnfV/?img_index=6&obrf=bGdtODNxazg5d2Vr",
-      image: "img/20.png",
+      image: "img/20.webp",
       note: "Де купити дивіться за посиланням"
     },
     {
@@ -205,7 +205,7 @@ window.WISHLIST = {
       title: "Розважальний нейро-набір ",
       price: "600 грн",
       link: "https://www.instagram.com/p/DeeizO1kQi-/?img_index=2&exln=MWxjeGM1dTVnZWp1aA==",
-      image: "img/21.png",
+      image: "img/21.webp",
       note: "Де купити дивіться за посиланням"
     }
   ]
