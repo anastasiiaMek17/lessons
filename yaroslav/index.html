@@ -1,0 +1,418 @@
+<!doctype html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Запрошуємо на 2-річчя Яруні</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Nunito:wght@400;600;700&display=swap">
+<style>
+/* Запрошення як аркуш пергаменту на тлі джунглів: угорі картинка, що розчиняється в папір, нижче інформація, потім віш-ліст. */
+:root {
+  --jungle: #46512A;
+  --jungle-deep: #353E1F;
+  --paper: #F0E4C8;
+  --paper-light: #F8F0DD;
+  --paper-edge: #D9C69B;
+  --brown: #54391F;
+  --brown-soft: #7A6046;
+  --olive: #5E6B2A;
+  --olive-deep: #48521F;
+  --olive-light: #8A9A45;
+  --mustard: #D9A43A;
+  --taken-bg: #DEDACE;
+  --taken-line: #A9A392;
+  --taken-ink: #86816F;
+  --font-body: "Nunito", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-hand: "Caveat", "Segoe Script", "Comic Sans MS", cursive;
+  color-scheme: light;
+}
+* { box-sizing: border-box; }
+html { background: var(--paper); }
+body {
+  margin: 0; color: var(--brown); font-family: var(--font-body); font-size: 16px; line-height: 1.55;
+  background-color: var(--paper);
+  background-image:
+    radial-gradient(70% 40% at 12% 0%, rgba(255,255,255,.55), transparent 70%),
+    radial-gradient(80% 50% at 100% 100%, rgba(150,110,60,.16), transparent 70%),
+    radial-gradient(circle at 1px 1px, rgba(94,107,42,.10) 1.5px, transparent 0);
+  background-size: auto, auto, 26px 26px;
+  padding: 0 0 56px;
+}
+.page { display: flex; flex-direction: column; align-items: center; }
+
+/* ---------- Запрошення на всю сторінку ---------- */
+.invite { width: 100%; display: flex; flex-direction: column; align-items: center; }
+.hero { position: relative; width: 100%; max-width: 62rem; }
+.hero img {
+  display: block; width: 100%; height: auto;
+  -webkit-mask-image: linear-gradient(#000 78%, transparent 100%), linear-gradient(90deg, transparent, #000 7%, #000 93%, transparent);
+  -webkit-mask-composite: source-in;
+  mask-image: linear-gradient(#000 78%, transparent 100%), linear-gradient(90deg, transparent, #000 7%, #000 93%, transparent);
+  mask-composite: intersect;
+}
+.hero[hidden] { display: none; }
+.petals { position: absolute; inset: 0; overflow: hidden; pointer-events: none; }
+.leaf { position: absolute; top: -24px; width: 14px; height: 14px; border-radius: 0 100% 0 100%; background: var(--olive-light); opacity: .6; animation: fall 12s linear infinite; }
+.leaf:nth-child(1) { left: 12%; animation-delay: -2s; }
+.leaf:nth-child(2) { left: 30%; animation-delay: -8s; width: 11px; height: 11px; background: #B78A4F; }
+.leaf:nth-child(3) { left: 52%; animation-delay: -5s; }
+.leaf:nth-child(4) { left: 70%; animation-delay: -10s; width: 11px; height: 11px; background: #B78A4F; }
+.leaf:nth-child(5) { left: 88%; animation-delay: -1s; width: 18px; height: 18px; }
+@keyframes fall {
+  0% { transform: translate(0, 0) rotate(0); }
+  50% { transform: translate(26px, 200px) rotate(180deg); }
+  100% { transform: translate(-12px, 420px) rotate(360deg); }
+}
+
+.invite-body { width: 100%; max-width: 46rem; padding: 8px max(20px, env(safe-area-inset-right, 0px)) 40px max(20px, env(safe-area-inset-left, 0px)); display: flex; flex-direction: column; gap: 30px; }
+.info-row { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 26px 30px; align-items: center; }
+.facts { display: flex; flex-direction: column; gap: 18px; }
+.fact { display: flex; gap: 14px; align-items: flex-start; }
+.fact[hidden] { display: none; }
+.fact svg { flex: 0 0 auto; width: 44px; height: 44px; color: var(--brown); }
+.fact-label { font-family: var(--font-hand); font-weight: 700; font-size: 1.8rem; line-height: 1; margin: 0; }
+.fact-value { margin: 2px 0 0; font-weight: 700; font-size: 1.15rem; line-height: 1.3; overflow-wrap: anywhere; }
+.fact-value.small { font-weight: 600; font-size: 1rem; color: var(--brown-soft); }
+.swatches { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 8px; }
+.swatch { width: 38px; height: 38px; border-radius: 50%; border: 2px solid rgba(84,57,31,.5); box-shadow: 0 3px 0 rgba(84,57,31,.22); overflow: hidden; flex: 0 0 auto; }
+.swatch svg { display: block; width: 100%; height: 100%; }
+.welcome { text-align: center; display: flex; flex-direction: column; align-items: center; gap: 12px; }
+.welcome p { margin: 0; font-family: var(--font-hand); font-weight: 700; font-size: clamp(1.6rem, 5vw, 2.1rem); line-height: 1.15; text-wrap: balance; }
+.heart-line { display: flex; align-items: center; gap: 10px; width: 100%; max-width: 15rem; color: var(--brown); }
+.heart-line::before, .heart-line::after { content: ""; flex: 1; height: 2px; background: currentColor; border-radius: 2px; opacity: .55; }
+.heart-line svg { width: 26px; height: 26px; }
+.gifts-note { border-top: 2px dashed var(--paper-edge); padding-top: 26px; display: flex; flex-direction: column; align-items: center; gap: 10px; text-align: center; }
+.gifts-note[hidden] { display: none; }
+.gifts-note svg { width: 46px; height: 46px; }
+.gifts-note h2 { font-family: var(--font-hand); font-weight: 700; font-size: 2rem; line-height: 1; margin: 0; }
+.gifts-note p { margin: 0; max-width: 32rem; }
+.closing { font-family: var(--font-hand); font-weight: 700; font-size: clamp(1.7rem, 5vw, 2.2rem); line-height: 1.15; text-wrap: balance; margin: 8px 0 0; text-align: center; align-self: center; }
+.closing[hidden], .welcome[hidden] { display: none; }
+
+/* ---------- Віш-ліст ---------- */
+.list { width: min(64rem, calc(100% - 32px)); margin: 8px auto 0; padding: 34px 0 0; border-top: 2px dashed var(--paper-edge); }
+.list-head { display: flex; flex-direction: column; gap: 8px; margin-bottom: 22px; align-items: flex-start; }
+.list-head h2 { font-family: var(--font-hand); font-weight: 700; font-size: clamp(2.4rem, 8vw, 3.4rem); line-height: 1; margin: 0; color: var(--olive-deep); }
+.how { margin: 0; max-width: 44rem; color: var(--brown-soft); }
+.how strong { color: var(--brown); }
+.tally { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 16px; margin-top: 4px; }
+.tally[hidden] { display: none; }
+.tally-num { font-weight: 700; font-size: .95rem; background: var(--mustard); color: var(--brown); padding: 4px 14px; border-radius: 999px; font-variant-numeric: tabular-nums; border: 2px solid var(--brown); }
+.dots { display: flex; flex-wrap: wrap; gap: 6px; }
+.dot { width: 14px; height: 14px; border-radius: 50%; background: var(--olive); border: 2px solid var(--olive); }
+.dot.off { background: transparent; border-color: var(--taken-line); }
+.banner { border: 2px solid var(--paper-edge); background: var(--paper-light); border-radius: 12px; padding: 12px 16px; font-size: .95rem; max-width: 44rem; margin-bottom: 18px; }
+.banner[hidden], .toast[hidden] { display: none; }
+
+.grid { display: grid; gap: 16px; grid-template-columns: repeat(auto-fill, minmax(min(100%, 17rem), 1fr)); }
+.card { position: relative; background: var(--paper-light); border: 2px solid var(--paper-edge); border-radius: 18px; padding: 20px 18px 18px; display: flex; flex-direction: column; gap: 10px; min-width: 0; box-shadow: 0 4px 0 var(--paper-edge); overflow: hidden; }
+.card::before { content: ""; position: absolute; top: 10px; right: 12px; width: 10px; height: 10px; border-radius: 50%; background: var(--paper); border: 2px solid var(--paper-edge); z-index: 2; }
+.gift-img { display: block; width: calc(100% + 36px); margin: -20px -18px 4px; max-width: none; aspect-ratio: 4 / 3; object-fit: cover; background: var(--paper-edge); }
+.card.taken .gift-img { filter: grayscale(1); opacity: .55; }
+.card-head { display: flex; flex-direction: column; gap: 6px; padding-right: 18px; }
+.card h3 { margin: 0; font-size: 1.15rem; font-weight: 700; line-height: 1.25; overflow-wrap: anywhere; min-width: 0; }
+.price { align-self: flex-start; font-weight: 700; font-size: .85rem; color: var(--olive-deep); background: #E8E4C0; border-radius: 999px; padding: 2px 10px; font-variant-numeric: tabular-nums; }
+.note { margin: 0; color: var(--brown-soft); font-size: .95rem; overflow-wrap: anywhere; }
+.look { font-size: .92rem; font-weight: 700; color: var(--olive-deep); width: fit-content; }
+.card-foot { margin-top: auto; padding-top: 6px; display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+.tag { font-size: .8rem; font-weight: 700; background: var(--mustard); color: var(--brown); padding: 4px 10px; border-radius: 999px; border: 2px solid var(--brown); }
+.card.taken { background: var(--taken-bg); border: 2px dashed var(--taken-line); box-shadow: none; color: var(--taken-ink); }
+.card.taken::before { border-color: var(--taken-line); background: var(--taken-bg); }
+.card.taken h3 { text-decoration: line-through; text-decoration-thickness: 2px; }
+.card.taken .note, .card.taken .look { color: var(--taken-ink); }
+.card.taken .price { background: #D1CDBF; color: var(--taken-ink); }
+
+button { font: inherit; cursor: pointer; }
+.btn { border: 2px solid var(--brown); border-radius: 12px; padding: 10px 16px; font-weight: 700; font-size: .95rem; background: var(--olive); color: #FBF3DC; min-height: 44px; box-shadow: 0 3px 0 var(--brown); transition: transform .08s, box-shadow .08s; }
+.btn:hover:not(:disabled) { background: var(--olive-deep); }
+.btn:active:not(:disabled) { transform: translateY(3px); box-shadow: 0 0 0 var(--brown); }
+.btn:disabled { cursor: not-allowed; background: transparent; color: var(--taken-ink); border-color: var(--taken-line); box-shadow: none; }
+.btn.ghost { background: transparent; color: var(--brown); box-shadow: none; border-color: var(--paper-edge); }
+.btn.small { min-height: 36px; padding: 6px 12px; font-size: .85rem; }
+a:focus-visible, button:focus-visible { outline: 3px solid var(--mustard); outline-offset: 2px; }
+.empty { border: 2px dashed var(--paper-edge); border-radius: 16px; padding: 28px 20px; text-align: center; color: var(--brown-soft); background: var(--paper-light); }
+.empty[hidden] { display: none; }
+.toast { position: fixed; left: 50%; transform: translateX(-50%); bottom: calc(20px + env(safe-area-inset-bottom, 0px)); background: var(--brown); color: #F8EFD8; padding: 10px 16px; border-radius: 12px; font-size: .92rem; max-width: min(92vw, 28rem); z-index: 20; }
+
+@media (max-width: 640px) {
+  .hero img { -webkit-mask-image: linear-gradient(#000 78%, transparent 100%); mask-image: linear-gradient(#000 78%, transparent 100%); -webkit-mask-composite: source-over; mask-composite: add; }
+  .invite-body { gap: 26px; }
+  .info-row { grid-template-columns: minmax(0, 1fr); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .leaf { animation: none; display: none; }
+  .btn { transition: none; }
+}
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- ======= Запрошення ======= -->
+  <section class="invite" aria-label="Запрошення">
+    <div class="hero" id="hero" hidden>
+      <img id="hero-img" alt="Запрошуємо на 2-річчя Яруні: малюк серед звірят у джунглях">
+      <div class="petals" aria-hidden="true"><span class="leaf"></span><span class="leaf"></span><span class="leaf"></span><span class="leaf"></span><span class="leaf"></span></div>
+    </div>
+
+    <div class="invite-body">
+      <div class="info-row">
+        <div class="facts">
+          <div class="fact" id="f-when" hidden>
+            <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="9" width="36" height="33" rx="5"/><path d="M6 19h36M16 5v8M32 5v8"/><g fill="currentColor" stroke="none"><circle cx="15" cy="27" r="2"/><circle cx="24" cy="27" r="2"/><circle cx="33" cy="27" r="2"/><circle cx="15" cy="35" r="2"/><circle cx="24" cy="35" r="2"/></g></svg>
+            <div><p class="fact-label">Коли?</p><p class="fact-value" id="v-when"></p></div>
+          </div>
+          <div class="fact" id="f-place" hidden>
+            <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M24 43S9 29.5 9 19a15 15 0 0 1 30 0c0 10.5-15 24-15 24Z"/><circle cx="24" cy="19" r="5.5"/></svg>
+            <div><p class="fact-label">Де?</p><p class="fact-value" id="v-place"></p></div>
+          </div>
+          <div class="fact" id="f-dress" hidden>
+            <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M24 14c0-3 2.5-5 5-5a4.5 4.5 0 0 1 0 9c-3 0-5 1.8-5 4.5V22"/><path d="M24 22 5 36a2.6 2.6 0 0 0 1.6 4.8h34.8A2.6 2.6 0 0 0 43 36L24 22Z"/></svg>
+            <div><p class="fact-label">Дрес-код:</p><div class="swatches" id="v-dress" role="img"></div></div>
+          </div>
+        </div>
+
+        <div class="welcome" id="welcome" hidden>
+          <p id="v-welcome"></p>
+          <div class="heart-line" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 20S3.5 14.5 3.5 8.8A4.6 4.6 0 0 1 12 6.6a4.6 4.6 0 0 1 8.5 2.2C20.5 14.5 12 20 12 20Z"/></svg></div>
+        </div>
+      </div>
+
+      <div class="gifts-note" id="gifts-note" hidden>
+        <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="18" width="36" height="9" rx="2"/><path d="M9 27v14a2 2 0 0 0 2 2h26a2 2 0 0 0 2-2V27M24 18v25"/><path d="M24 18c-3-8-12-9-12-4 0 3 6 4 12 4Zm0 0c3-8 12-9 12-4 0 3-6 4-12 4Z"/></svg>
+        <h2 id="v-gifts-title"></h2>
+        <div id="v-gifts-text"></div>
+      </div>
+      <p class="closing" id="v-closing" hidden></p>
+    </div>
+  </section>
+
+  <!-- ======= Віш-ліст ======= -->
+  <section class="list" aria-label="Віш-ліст" id="wishlist">
+    <div class="list-head">
+      <h2 id="v-list-title">Віш-ліст</h2>
+      <p class="how"><strong>Як це працює.</strong> Оберіть подарунок і натисніть «Забронювати». Він стане сірим для всіх, тож його не купить ще хтось.</p>
+      <div class="tally" id="tally" hidden>
+        <span class="tally-num" id="tally-num"></span>
+        <div class="dots" id="dots" aria-hidden="true"></div>
+      </div>
+    </div>
+    <div class="banner" id="banner" hidden></div>
+    <div class="grid" id="grid" aria-live="polite"></div>
+    <div class="empty" id="empty" hidden></div>
+  </section>
+
+</div>
+<div class="toast" id="toast" role="status" hidden></div>
+
+<script src="config.js"></script>
+<script type="module">
+const cfg = window.WISHLIST || { gifts: [] };
+const fbCfg = window.FIREBASE_CONFIG;
+const $ = (id) => document.getElementById(id);
+const state = { gifts: cfg.gifts || [], res: {}, uid: null, ready: false, demo: false, busy: {}, error: "" };
+let backend = null;
+
+function el(tag, props = {}, ...kids) {
+  const e = document.createElement(tag);
+  for (const [k, v] of Object.entries(props)) {
+    if (k === "class") e.className = v;
+    else if (k === "text") e.textContent = v;
+    else if (k.startsWith("on")) e.addEventListener(k.slice(2), v);
+    else e.setAttribute(k, v);
+  }
+  e.append(...kids.filter(Boolean));
+  return e;
+}
+function safeUrl(u) {
+  if (!u) return null;
+  try {
+    const x = new URL(/^https?:\/\//i.test(u) ? u : "https://" + u);
+    return x.protocol === "http:" || x.protocol === "https:" ? x.href : null;
+  } catch { return null; }
+}
+let toastTimer;
+function toast(t) {
+  const n = $("toast"); n.textContent = t; n.hidden = false;
+  clearTimeout(toastTimer); toastTimer = setTimeout(() => (n.hidden = true), 4000);
+}
+
+/* ---------- Запрошення: тексти з config.js ---------- */
+function leopardSvg() {
+  // Розетки: темне розірване кільце з темнішим центром, як у справжньої плями леопарда
+  const rosette = (x, y, r, s) => `<g transform="translate(${x} ${y}) rotate(${r}) scale(${s})"><path d="M-12 0 C-12 -9 -4 -13 4 -11 C11 -9 14 -3 12 3 C10 9 3 12 -4 10 C-9 8 -12 5 -12 0Z" fill="#B97B34"/><path d="M-13 -2 C-13 -10 -5 -15 3 -13 M12 -6 C15 0 13 8 6 12 M-2 13 C-9 12 -13 7 -13 2" fill="none" stroke="#3A2312" stroke-width="4.6" stroke-linecap="round"/></g>`;
+  return `<svg viewBox="0 0 100 100" aria-hidden="true"><rect width="100" height="100" fill="#E0A955"/>` +
+    rosette(24,24,10,1.05) + rosette(68,20,170,1) + rosette(48,52,95,1.1) + rosette(84,56,280,.95) + rosette(16,74,220,1) + rosette(62,86,30,1) +
+    `<g fill="#3A2312"><circle cx="44" cy="10" r="2.4"/><circle cx="8" cy="48" r="2.4"/><circle cx="76" cy="38" r="2.2"/><circle cx="34" cy="90" r="2.4"/><circle cx="92" cy="80" r="2.4"/><circle cx="30" cy="48" r="2"/><circle cx="90" cy="12" r="2.4"/></g></svg>`;
+}
+function renderDress() {
+  const box = $("v-dress");
+  const items = Array.isArray(cfg.dress) ? cfg.dress : [];
+  box.replaceChildren();
+  if (!items.length && cfg.dressCode) {
+    box.removeAttribute("class"); box.className = "fact-value small"; box.textContent = cfg.dressCode;
+    $("f-dress").hidden = false; return;
+  }
+  items.forEach((it) => {
+    const s = el("span", { class: "swatch", title: it.name || "" });
+    if (it.pattern === "leopard") s.innerHTML = leopardSvg();
+    else s.style.background = it.color || "#ccc";
+    box.append(s);
+  });
+  box.setAttribute("aria-label", "Кольори: " + items.map((i) => i.name).filter(Boolean).join(", "));
+  $("f-dress").hidden = !items.length;
+}
+function setFact(rowId, valId, text) {
+  $(valId).textContent = text || "";
+  $(rowId).hidden = !text;
+}
+function renderInvite() {
+  document.title = cfg.pageTitle || "Запрошення";
+  if (cfg.heroImage) {
+    const img = $("hero-img");
+    img.addEventListener("load", () => { $("hero").hidden = false; });
+    img.addEventListener("error", () => { $("hero").hidden = true; });
+    img.src = cfg.heroImage;
+  }
+  setFact("f-when", "v-when", cfg.when);
+  setFact("f-place", "v-place", cfg.place);
+  renderDress();
+  $("v-welcome").textContent = cfg.welcome || "";
+  $("welcome").hidden = !cfg.welcome;
+
+  const paras = (cfg.giftsText || []).filter(Boolean);
+  $("v-gifts-title").textContent = cfg.giftsTitle || "";
+  $("v-gifts-text").replaceChildren(...paras.map((t) => el("p", { text: t })));
+  $("gifts-note").hidden = !(cfg.giftsTitle || paras.length);
+
+  $("v-closing").textContent = cfg.closing || "";
+  $("v-closing").hidden = !cfg.closing;
+  $("v-list-title").textContent = cfg.wishlistTitle || "Віш-ліст";
+}
+
+/* ---------- Віш-ліст ---------- */
+function render() {
+  const total = state.gifts.length;
+  $("tally").hidden = !(state.ready && total);
+  if (state.ready && total) {
+    const free = state.gifts.filter((g) => !state.res[g.id]).length;
+    $("tally-num").textContent = `Вільно: ${free} з ${total}`;
+    $("dots").replaceChildren(...state.gifts.map((g) => el("span", { class: "dot" + (state.res[g.id] ? " off" : "") })));
+  }
+
+  const b = $("banner");
+  if (state.error) { b.hidden = false; b.textContent = state.error; }
+  else if (state.demo) { b.hidden = false; b.textContent = "Демо-режим: бронь видно тільки в цьому браузері. Підключіть Firebase за інструкцією, щоб її бачили всі гості."; }
+  else b.hidden = true;
+
+  const grid = $("grid"), empty = $("empty");
+  grid.replaceChildren();
+  if (!state.ready) { empty.hidden = false; empty.textContent = "Завантажуємо список…"; return; }
+  if (!total) { empty.hidden = false; empty.textContent = "Список поки порожній."; return; }
+  empty.hidden = true;
+  state.gifts.forEach((g) => grid.append(card(g)));
+}
+
+function card(g) {
+  const by = state.res[g.id], taken = !!by, mine = taken && by === state.uid, url = safeUrl(g.link);
+  const c = el("article", { class: "card" + (taken ? " taken" : "") });
+  if (g.image) {
+    const im = el("img", { class: "gift-img", src: g.image, alt: g.title || "Подарунок", loading: "lazy" });
+    im.addEventListener("error", () => im.remove());
+    c.append(im);
+  }
+  const head = el("div", { class: "card-head" }, el("h3", { text: g.title || "Без назви" }));
+  if (g.price) head.append(el("span", { class: "price", text: g.price }));
+  c.append(head);
+  if (g.note) c.append(el("p", { class: "note", text: g.note }));
+  if (url) c.append(el("a", { class: "look", href: url, target: "_blank", rel: "noopener noreferrer", text: "Де купити" }));
+  const foot = el("div", { class: "card-foot" });
+  if (!taken) {
+    const b = el("button", { class: "btn", type: "button", text: state.busy[g.id] ? "Бронюємо…" : "Забронювати", onclick: () => reserve(g) });
+    if (!state.uid || state.busy[g.id]) b.disabled = true;
+    foot.append(b);
+  } else if (mine) {
+    foot.append(el("span", { class: "tag", text: "Ви забронювали" }));
+    const cb = el("button", { class: "btn ghost small", type: "button", text: "Скасувати бронь", onclick: () => release(g) });
+    if (state.busy[g.id]) cb.disabled = true;
+    foot.append(cb);
+  } else {
+    const t = el("button", { class: "btn", type: "button", text: "Заброньовано" });
+    t.disabled = true; foot.append(t);
+  }
+  c.append(foot);
+  return c;
+}
+
+
+async function reserve(g) {
+  if (state.busy[g.id] || !state.uid) return;
+  state.busy[g.id] = true; render();
+  try {
+    await backend.reserve(g.id);
+    toast("Готово. Для інших гостей цей подарунок тепер сірий.");
+  } catch (e) {
+    toast(e && e.code === "permission-denied" ? "Цей подарунок уже забронювали." : "Не вдалося забронювати. Спробуйте ще раз.");
+  } finally { delete state.busy[g.id]; render(); }
+}
+async function release(g) {
+  if (state.busy[g.id]) return;
+  state.busy[g.id] = true; render();
+  try { await backend.release(g.id); toast("Бронь знято."); }
+  catch { toast("Не вдалося зняти бронь. Спробуйте ще раз."); }
+  finally { delete state.busy[g.id]; render(); }
+}
+
+
+/* ---------- Демо-режим: усе зберігається в браузері ---------- */
+function demoBackend() {
+  const KEY = "wishlist-demo-reservations";
+  const read = () => { try { return JSON.parse(localStorage.getItem(KEY)) || {}; } catch { return {}; } };
+  const write = (o) => { try { localStorage.setItem(KEY, JSON.stringify(o)); } catch {} };
+  state.demo = true; state.uid = "demo-user";
+  return {
+    start() { state.res = read(); state.ready = true; render(); },
+    async reserve(id) { const r = read(); if (r[id]) throw { code: "permission-denied" }; r[id] = state.uid; write(r); state.res = r; },
+    async release(id) { const r = read(); delete r[id]; write(r); state.res = r; }
+  };
+}
+
+/* ---------- Firebase: бронь спільна для всіх гостей ---------- */
+async function firebaseBackend() {
+  const V = "10.14.1", base = `https://www.gstatic.com/firebasejs/${V}/`;
+  const [app, auth, fs] = await Promise.all([
+    import(base + "firebase-app.js"), import(base + "firebase-auth.js"), import(base + "firebase-firestore.js")
+  ]);
+  const a = app.initializeApp(fbCfg);
+  const au = auth.getAuth(a), db = fs.getFirestore(a);
+  const cred = await auth.signInAnonymously(au);
+  state.uid = cred.user.uid;
+  return {
+    start() {
+      fs.onSnapshot(fs.collection(db, "reservations"), (snap) => {
+        const r = {}; snap.forEach((d) => { const x = d.data(); if (x && x.by) r[d.id] = x.by; });
+        state.res = r; state.ready = true; state.error = ""; render();
+      }, () => { state.error = "Не вдалося завантажити бронювання. Оновіть сторінку."; state.ready = true; render(); });
+    },
+    reserve: (id) => fs.setDoc(fs.doc(db, "reservations", id), { by: state.uid, at: fs.serverTimestamp() }),
+    release: (id) => fs.deleteDoc(fs.doc(db, "reservations", id))
+  };
+}
+
+
+(async function init() {
+  renderInvite();
+  render();
+  try {
+    backend = fbCfg && fbCfg.apiKey ? await firebaseBackend() : demoBackend();
+  } catch (e) {
+    state.error = "Не вдалося підключитися до Firebase. Перевірте налаштування в config.js та інструкцію.";
+    state.ready = true; render(); return;
+  }
+  backend.start();
+})();
+</script>
+</body>
+</html>
