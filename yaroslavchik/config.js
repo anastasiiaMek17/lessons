@@ -68,7 +68,7 @@ window.WISHLIST = {
       id: "books1",
       title: "Книжка",
       price: "358 грн",
-      link: "https://www.instagram.com/p/DcagSEyDCWr/?dlrf=YzV0YnBhODFpbWZ0",
+      link: "https://www.instagram.com/p/DXWIDzXjb_C/?rpxt=eXU1cHlveHJnenBp",
       image: "img/4.webp",
       note: "Де купити дивіться за посиланням"
     },
@@ -116,7 +116,7 @@ window.WISHLIST = {
       id: "magnetic-construction-set",
       title: "Магнітний конструктор",
       price: "640 грн",
-      link: "https://www.instagram.com/p/DcagSEyDCWr/?dlrf=YzV0YnBhODFpbWZ0",
+      link: "https://www.instagram.com/p/DeeTK-wkY3E/?rpxt=bDl2bDk2eGI3OHVj",
       image: "img/10.webp",
       note: "Де купити дивіться за посиланням"
     },
