@@ -1,0 +1,23 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Бронювання: id документа = id подарунка
+    match /reservations/{giftId} {
+      // Усі гості бачать, що заброньовано
+      allow read: if true;
+
+      // Забронювати може будь-який гість (з анонімним входом), лише якщо подарунок ще вільний.
+      // Це створення нового документа: якщо він уже існує, запис стає оновленням і відхиляється.
+      allow create: if request.auth != null
+                    && giftId.matches('[a-z0-9-]{1,40}')
+                    && request.resource.data.keys().hasOnly(['by', 'at'])
+                    && request.resource.data.by == request.auth.uid;
+
+      // Зняти бронь може тільки той, хто її зробив
+      allow delete: if request.auth != null && resource.data.by == request.auth.uid;
+
+      // Змінювати чужі або існуючі броні заборонено
+      allow update: if false;
+    }
+  }
+}
