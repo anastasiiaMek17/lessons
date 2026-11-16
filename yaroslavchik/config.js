@@ -41,35 +41,13 @@ window.WISHLIST = {
   // image: фото подарунка (файл поруч з index.html, наприклад "puzzles.jpg"). Необов'язково.
   // Невикористані поля залишайте порожніми: "".
   gifts: [
-    {
-      id: "magnetic-puzzles",
-      title: "Магнітні пазли",
-      price: "180 грн за одну тему",
-      link: "https://www.instagram.com/p/DSC49UfCkO9/",
-      image: "img/1.webp",
-      note: "Теми та де купити дивіться за посиланням"
-    },{
-    id: "magnetic-constr",
-      title: "Магнітний конструктор",
-      price: "995 грн",
-      link: "https://www.instagram.com/reel/DfKZXW4sQtN/?rpxt=MTUzc2pwaWhmZWIx",
-      image: "img/2.webp",
-      note: "Де купити дивіться за посиланням"
-    },
+   
     {
       id: "wooden-set",
       title: "Дерев'яний набір",
       price: "349 грн",
       link: "https://www.instagram.com/p/DcagSEyDCWr/?dlrf=YzV0YnBhODFpbWZ0",
       image: "img/3.webp",
-      note: "Де купити дивіться за посиланням"
-    },
-    {
-      id: "books1",
-      title: "Книжка",
-      price: "358 грн",
-      link: "https://www.instagram.com/p/DXWIDzXjb_C/?rpxt=eXU1cHlveHJnenBp",
-      image: "img/4.webp",
       note: "Де купити дивіться за посиланням"
     },
     {
@@ -94,14 +72,6 @@ window.WISHLIST = {
       price: "325 грн",
       link: "https://www.instagram.com/reel/DYByi8kIyVt/?mdxt=MXExbm4xaDVjdDY5OA==",
       image: "img/8.webp",
-      note: "Де купити дивіться за посиланням"
-    },
-    {
-      id: "sorting-chests",
-      title: "Сортувальні комодики",
-      price: "500/550 грн",
-      link: "https://www.instagram.com/reel/DX8vzGSo3ow/?mdxt=MTdhNTcyNnhuMmQ4Nw==",
-      image: "img/7.webp",
       note: "Де купити дивіться за посиланням"
     },
     {
@@ -161,38 +131,6 @@ window.WISHLIST = {
       note: "Де купити дивіться за посиланням"
     },
     {
-      id: "reusable-mosaic",
-      title: "БАГАТОФУНКЦІОНАЛЬНА МОЗАЇКА ",
-      price: "950 грн",
-      link: "https://www.instagram.com/reel/DOs51JHiuIA/?cplk=a3g3YW5zOWFiYmlq",
-      image: "img/16.webp",
-      note: "Де купити дивіться за посиланням"
-    },
-    {
-      id: "Developmental-Collection",
-      title: "Розвиваючий збірник ",
-      price: "450 грн",
-      link: "https://www.instagram.com/reel/DfU4LlNOLUV/?vrfl=MXhqYWM1OXowdmo0MQ==",
-      image: "img/17.webp",
-      note: "Де купити дивіться за посиланням"
-    },
-    {
-      id: "Designer",
-      title: "Конструктор",
-      price: "550 грн",
-      link: "https://www.instagram.com/reel/Dei0xcmO4kM/?psln=MTJuNWE3aDN3ODdyaA==",
-      image: "img/18.webp",
-      note: "Де купити дивіться за посиланням"
-    },
-    {
-      id: "7-in-1-Sorter",
-      title: "Сортер 7в1",
-      price: "580 грн",
-      link: "https://www.instagram.com/p/DfChHWljnwr/?img_index=3&srtk=NTRjYW1rbDVkeWE1",
-      image: "img/19.webp",
-      note: "Де купити дивіться за посиланням"
-    },
-    {
       id: "pencils",
       title: "Графомоторні доріжки Олівчики",
       price: "280 грн",
@@ -206,6 +144,62 @@ window.WISHLIST = {
       price: "600 грн",
       link: "https://www.instagram.com/p/DeeizO1kQi-/?img_index=2&exln=MWxjeGM1dTVnZWp1aA==",
       image: "img/21.webp",
+      note: "Де купити дивіться за посиланням"
+    },
+    {
+      id: "lotto",
+      title: "Лото з тваринами ",
+      price: "585 грн",
+      link: "https://www.instagram.com/brainy_toyz?rpxt=cWdsNjJmODF6emYx",
+      image: "img/22.webp",
+      note: "Де купити дивіться за посиланням"
+    },
+    {
+      id: "ambulance",
+      title: "🚑Хто викликав швидку?",
+      price: "439 грн",
+      link: "https://www.instagram.com/brainy_toyz?dlrf=cWdsNjJmODF6emYx",
+      image: "img/23.webp",
+      note: "Де купити дивіться за посиланням"
+    },
+    {
+      id: "shape-sorting-cube",
+      title: "Сортер (Куб з набором)",
+      price: "499 грн",
+      link: "https://www.instagram.com/dobry_mishka_ua?obrf=MmVoM3g2emxwaWdv",
+      image: "img/24.webp",
+      note: "Де купити дивіться за посиланням"
+    },
+    {
+      id: "wooden-sorter",
+      title: "Дерев'яний сортер (Веселка)",
+      price: "450 грн",
+      link: "https://www.instagram.com/bebe.store.cv?cplk=dnV2bXYxNTM2dnFp",
+      image: "img/25.webp",
+      note: "Де купити дивіться за посиланням"
+    },
+    {
+      id: "books",
+      title: "Вчимося говорити реченнями",
+      price: "450 грн",
+      link: "https://www.instagram.com/rozvuvashka?exln=dGI2d2x4aG16aXpi",
+      image: "img/26.webp",
+      note: "Де купити дивіться за посиланням"
+    },
+    {
+      id: "domino",
+      title: "Доміно звуконаслідування",
+      price: "120 грн",
+      link: "https://www.instagram.com/smart_pencil_?srtk=MTdneGt0cTM0ZTJ5ZQ==",
+      image: "img/27.webp",
+      note: "Де купити дивіться за посиланням"
+    },
+    {
+      id: "Seguin-boards",
+      title: "Дощечки Сегена",
+      price: "300 грн",
+      link: "https://www.instagram.com/torik_toys?psln=MTQ1bDZlYW9haGFmOA==",
+      image: "img/28.webp",
       note: "Де купити дивіться за посиланням"
     }
   ]
